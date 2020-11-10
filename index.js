@@ -53,7 +53,7 @@ return array;
 client.once('ready', () => {
     console.log('Ready!')
 })
-//!q
+//%q
 client.on('message', message => {
      if(message.content.startsWith(`${prefix}q`))        
         if (ping.includes(message.author))
@@ -63,7 +63,7 @@ client.on('message', message => {
          ping[0 + count] = message.author
          count = count + 1
          message.channel.send("You have been added the the queue.") } 
-// !r
+// %r
      else if(message.content.startsWith(`${prefix}r`))
          if (ping.includes(message.author)) {
             index = ping.indexOf(message.author);
@@ -74,7 +74,7 @@ client.on('message', message => {
             message.channel.send("You have been removed from the queue.") 
             count = count - 1}
          else message.channel.send("You are not in the queue!")
-// !n        
+// %n        
      else if(message.content.startsWith(`${prefix}n`))   
      //play game if more than two people 
         if (count > 1)
@@ -89,7 +89,7 @@ client.on('message', message => {
           msg = count - countgame 
         }
      else message.channel.send("Too few players to start the game.")
-//!s
+//%s
      else if(message.content.startsWith(`${prefix}s`))    
      {  if (count > 1) {
          if (message.author == (ping)[countgame]) {
@@ -117,17 +117,17 @@ client.on('message', message => {
          else message.channel.send("Too few players to start the game.") }
          else message.channel.send("Too few players to start the game.")  
         }
-//!d
+//%d
      else if(message.content.startsWith(`${prefix}d`))     
      {message.channel.send("**The current queue is:**")
       message.channel.send(users) 
       message.channel.send(count + " Players currently in queue.\n " + msg + "T/D Remaining untill next randomization.")
     }
-//!bug
+//%bug
       else if(message.content.startsWith(`${prefix}bug`)) 
       {message.channel.send("!q")
         }
-//!p       
+//%p       
       else if(message.content.startsWith(`${prefix}p`)) 
         {message.channel.send("**The queue has been purged.**")        
         users = []
