@@ -59,7 +59,7 @@ client.on('message', message => {
         if (ping.includes(message.author))
          message.channel.send("You are already in the queue!")
         else 
-        { users[0 + count] = message.author.username
+        { users[0 + count] = message.author
          ping[0 + count] = message.author
          count = count + 1
          message.channel.send("You have been added the the queue.") } 
