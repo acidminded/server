@@ -80,7 +80,7 @@ client.on('message', message => {
         if (count > 1)
             {if (countgame == count -1 ) {
               message.channel.send("The queue is being shuffled.")
-              shuffleassign(xrandomindex)
+              shuffle(xrandomindex)
               shuffleassign(ping)
               shuffleassign(users)
               countgame = 0 } 
