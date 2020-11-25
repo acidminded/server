@@ -86,9 +86,9 @@ client.on('message', message => {
          if (count > 1) {
             if (countgame == count -1 ) {
                 message.channel.send("The queue is being shuffled.")
-                shuffle(xrandomindex)
-                shuffleassign(ping)
-                shuffleassign(users)
+                const arr = [users];
+                shuffle(arr);
+                console.log(arr);
                 countgame = 0 }
                 message.channel.send ((ping)[countgame] + " is currently asking " + (ping)[countgame + 1] )
                 countgame = countgame +1
