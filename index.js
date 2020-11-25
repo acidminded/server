@@ -12,42 +12,22 @@ var msg= 0
 
 //copy/pasted shuffle array function, used to make one random index
 function shuffle(array) {
-    var currentIndex = ping.length -1, temporaryValue, randomIndex
-  
-    // it is what it is
-    array[0]=0
-    while (0 !== currentIndex) {
-      array[currentIndex] = currentIndex;
-      currentIndex -= 1;
-    }
-   //copy/pasted shuffle array function, used to make one random index-- copy/paste starts here
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-  
-    return array;
-      console.log(xrandomindex)
-  }
-// added 5/28, should make the bot fully functional | takes the randomized index and applies it to any array, can be reusused on multiple arrays deterministically
-  function shuffleassign(array) {
-    var currentIndex = array.length -1, temporaryValue, randomIndex;
+  let currentIndex = array.length, temporaryValue, randomIndex;
+
+  // Continue to shuffle while there are items on the index
   while (0 !== currentIndex) {
-    randomIndex = xrandomindex[currentIndex];
+
+    // Pick one of the remaining elements
+    randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
+
+    // Swap it with the current element
     temporaryValue = array[currentIndex];
-   array[currentIndex] = array[randomIndex];
+    array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
-}
-return array;
+  }
+
+  return array;
 }
 
 client.once('ready', () => {
@@ -80,9 +60,9 @@ client.on('message', message => {
         if (count > 1)
             {if (countgame == count -1 ) {
               message.channel.send("The queue is being shuffled.")
-              shuffle(xrandomindex)
-              shuffleassign(ping)
-              shuffleassign(users)
+                const arr = [users];
+                shuffle(arr);
+                console.log(arr);
               countgame = 0 } 
           message.channel.send ((ping)[countgame] + " is currently asking " + (ping)[countgame + 1] )
           countgame = countgame +1
